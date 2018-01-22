@@ -1,0 +1,10 @@
+@model IEnumerable<music.Models.Track>
+
+
+<h2>Track model</h2>
+@foreach(var track in Model)
+{
+    <p>
+    <span>@track.Title - @track.Artist - @track.Duration</span>
+    </p>
+}

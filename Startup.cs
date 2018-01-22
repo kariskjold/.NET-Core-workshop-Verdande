@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
 namespace music
 {
@@ -21,6 +22,7 @@ namespace music
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MusicDbContext>(opt => opt.UseInMemoryDatabase("Music.db"));
             services.AddMvc();
         }
 
@@ -38,12 +40,30 @@ namespace music
 
             app.UseStaticFiles();
 
+            var context = app.ApplicationServices.GetService<MusicDbContext>();
+            AddTestData(context);
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+        private static void AddTestData(MusicDbContext context)
+        {
+            var track1 = new Models.Track
+            {
+                Id = 1,
+                Title = "Sick Boy",
+                Artist = "The Chainsmokers",
+                Duration = "3:13",
+                NumPlays = 6135077
+            };
+        
+            context.Track.Add(track1);
+        
+            context.SaveChanges();
         }
     }
 }
