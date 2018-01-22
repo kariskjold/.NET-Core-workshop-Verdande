@@ -7,17 +7,19 @@ Velkommen til workshop med Verdande og Knowit Experience! Her finner du instruks
 1. Last ned [.NET Core SDK](https://www.microsoft.com/net/download/macos) - Software Development Kit
 
 2. Åpne terminal hvis du har mac / linux, eller command prompt dersom du har Windows
+
 3. Naviger deg til den mappen du ønsker å opprette prosjektet i, for eksempel til /Documents/git
-4. Kjør følgende kommando for å opprette web applikasjonen:
+
+4. Kjør følgende kommando for å opprette en web applikasjon som heter "music":
 
 ```
-dotnet new mvc <navn på applikasjon>
+dotnet new mvc music
 ```
 
 5. Naviger deg inn i prosjektet
 
 ```
-cd <navn på applikasjon>
+cd music
 ```
 
 6. Start web applikasjonen:
@@ -28,6 +30,7 @@ dotnet run
 
 7. Nå kan du se webapplikasjonen din kjøre på din lokale maskin:
 http://localhost:5000
+
 
 8. Bli kjent med applikasjonen ved å trykke deg gjennom fanene "Home", "About" og "Contact"
 
@@ -40,28 +43,64 @@ Videre skal vi se på selve koden for applikasjonen
 
 1. Åpne Visual Studio Code
 
-2. File >> Open >> Prosjektet ditt
+2. Åpne prosjektet ditt i Visual Studio Code
 
-3. Under mappen /Pages, ser du index, home og contact-filene
+```csharp
+File >> Open >> ... music
+```
 
+// Snakk om MVC-modellen på white board
+
+Her ser du en MVC-struktur, med mappe for controllere, modeller og views. Naviger deg litt frem og tilbake mellom filene, for å bli kjent med strukturen.
+
+## Opprett en ny side som heter "My music"
+
+1. Naviger deg til mappen /Controllers, og opprett en ny fil som heter MusicController.cs
+
+```
+/Controllers/MusicController.cs
+```
+
+```csharp
+using Microsoft.AspNetCore.Mvc;
+
+namespace music.Controllers
+{
+    public class MusicController : Controller
+    {
+        public IActionResult Index()
+        {
+            ViewData["Title"] = "My Music";
+            return View();
+        }
+    }
+}
+```
+
+2. Naviger deg til mappen /Views, og opprett en undermappe "Music" og under der; en fil "Index.cshtml".
+
+```
+/Views/Music/Index.cshtml
+```
+
+Dette blir viewet til den nye siden vi lager. Legg til en header med tittelen vi definerte i controlleren, og en paragraf med en valgfri tekst.
+
+3. Naviger deg til partial viewet /Shared/_Layout.cshtml og legg til et nytt menypunkt i headeren som du kaller f.eks "My music"
+
+// asp-controller: music
+// asp-action: Index
+
+4. Lagre alle filene og kjør prosjektet på nytt i terminal/command prompt
+
+```
+dotnet run
+```
 
 ## Oppsett av database (TODO)
 
 1. Last ned Workshop.db fra github repoet, og legg det i ditt eget prosjekt under /bin/Debug/netcoreapp2.0
 
 2. Koble opp mot databasen
-
-
-## Lag en ny side som heter "music"
-// Her snakker vi om MVC-modellen, på white board
-
-1. Opprett et view som heter "music.cshtml" under /Pages
-
-```
-/Pages/music.cshtml
-```
-
-2. 
 
 ## Authors
 
