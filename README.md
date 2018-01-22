@@ -31,6 +31,7 @@ dotnet run
 7. Nå kan du se webapplikasjonen din kjøre på din lokale maskin:
 http://localhost:5000
 
+> Trykk Ctrl + C, for å avslutte applikasjonen
 
 8. Bli kjent med applikasjonen ved å trykke deg gjennom fanene "Home", "About" og "Contact"
 
@@ -45,11 +46,11 @@ Videre skal vi se på selve koden for applikasjonen
 
 2. Åpne prosjektet ditt i Visual Studio Code
 
-```csharp
+```
 File >> Open >> ... music
 ```
 
-// Snakk om MVC-modellen på white board
+<!---Snakk om MVC-modellen på white board--->
 
 Her ser du en MVC-struktur, med mappe for controllere, modeller og views. Naviger deg litt frem og tilbake mellom filene, for å bli kjent med strukturen.
 
@@ -87,10 +88,10 @@ Dette blir viewet til den nye siden vi lager. Legg til en header med tittelen vi
 
 3. Naviger deg til partial viewet /Shared/_Layout.cshtml og legg til et nytt menypunkt i headeren som du kaller f.eks "My music"
 
-// asp-controller: music
-// asp-action: Index
+<!--- asp-controller: music --->
+<!--- asp-action: Index --->
 
-4. Lagre alle filene og kjør prosjektet på nytt i terminal/command prompt
+4. Lagre alle filene og kjør prosjektet på nytt i terminal/command prompt (Trykk Ctrl + C for å først avslutte applikasjonen)
 
 ```
 dotnet run
@@ -101,6 +102,8 @@ dotnet run
 1. Last ned Workshop.db fra github repoet, og legg det i ditt eget prosjekt under /bin/Debug/netcoreapp2.0
 
 2. Koble opp mot databasen
+
+## Legg til data i viewet (TODO)
 
 ## Authors
 
