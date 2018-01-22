@@ -91,11 +91,31 @@ Dette blir viewet til den nye siden vi lager. Legg til en header med tittelen vi
 <!--- asp-controller: music --->
 <!--- asp-action: Index --->
 
-4. Lagre alle filene og kjør prosjektet på nytt i terminal/command prompt (Trykk Ctrl + C for å først avslutte applikasjonen)
+4. Lagre alle filene og kjør prosjektet på nytt i terminal/command prompt
+
+```
+Ctrl + C
+```
 
 ```
 dotnet run
 ```
+
+5. Se oppdateringene på http://localhost:5000
+
+## Opprett en viewModel for Playlist
+
+Under "my music" ønsker vi å vise fram spillelister med tilhørende sanger. Hver spilleliste skal ha et navn. Vi begynner med å opprette en viewModel for Playlist. Under /Models ser dere et eksempel på en viewModel. 
+
+1. Opprett en ny fil med en playlist viewModel som har egenskapen "Name" med getter og setter.
+
+```
+/Models/PlaylistViewModel.cs
+```
+
+2. Definer playlistViewModel som model i MusicController. Sett et navn til spillelisten, og send med modellen i det du returnerer viewet i Index-metoden.
+
+3. Vis spillelistens navn i viewet
 
 ## Oppsett av database (TODO)
 
