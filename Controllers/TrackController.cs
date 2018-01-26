@@ -10,8 +10,6 @@ namespace music.Controllers
         {
             var track = new SampleTracks().GetTrackById(id);
 
-            Console.Write("Hello from deta");
-
             return View(track);
         }
         public IActionResult Index()

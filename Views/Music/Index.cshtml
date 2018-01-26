@@ -1,6 +1,26 @@
 @model PlaylistViewModel
 
-<h2>@ViewData["Title"]</h2>
-<p>My awesome music page</p>
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <p>My awesome music page</p>
 
-@Model.Name
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Plays</th>
+      </tr>
+    </thead>
+    <tbody>
+        @foreach(var track in @Model.Tracks){
+            <tr>
+                <td>@track.Title</td>
+                <td>@track.Artist</td>
+                <td>@track.NumPlays</td>
+            </tr>
+        }
+    </tbody>
+  </table>
+</div>
+

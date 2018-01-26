@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using music.Models;
+using System.Collections.Generic;
+
 
 namespace music.Controllers
 {
@@ -7,8 +9,11 @@ namespace music.Controllers
     {
         public IActionResult Index()
         {
-            var model = new PlaylistViewModel();
-            model.Name = "Favorites";
+            var model = new PlaylistViewModel
+            {
+                Name = "Favorites",
+                Tracks = new SampleTracks().GetAllTracks()
+            };
 
             ViewData["Title"] = "My Music";
             return View(model);

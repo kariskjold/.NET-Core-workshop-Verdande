@@ -1,4 +1,4 @@
-# .NET-Core-workshop-Verdande
+﻿# .NET-Core-workshop-Verdande
 
 Velkommen til workshop med Verdande og Knowit Experience! Her finner du instruksjoner til hvordan du får satt opp og kjørt en ny web applikasjon med .NET Core og C# på din lokale maskin. Videre, vil du få oppgaver som skal gjøre deg kjent med web applikasjonen. Temaet for workshoppen er musikk. Vi har satt opp en database som du skal hente data fra, og vise i applikasjonen din.
 
@@ -13,13 +13,13 @@ Velkommen til workshop med Verdande og Knowit Experience! Her finner du instruks
 4. Kjør følgende kommando for å opprette en web applikasjon som heter "music":
 
 ```
-dotnet new mvc music
+dotnet new mvc Music
 ```
 
 5. Naviger deg inn i prosjektet
 
 ```
-cd music
+cd Music
 ```
 
 6. Start web applikasjonen:
@@ -65,7 +65,7 @@ Her ser du en MVC-struktur, med mappe for controllere, modeller og views. Navige
 ```csharp
 using Microsoft.AspNetCore.Mvc;
 
-namespace music.Controllers
+namespace Music.Controllers
 {
     public class MusicController : Controller
     {
@@ -117,7 +117,7 @@ Under "my music" ønsker vi å vise fram spillelister med tilhørende sanger. Hv
 
 3. Vis spillelistens navn i viewet
 
-## Oppsett av database (TODO)
+## Oppsett av data (TODO)
 
 1. Last ned Workshop.db fra github repoet, og legg det i ditt eget prosjekt under /bin/Debug/netcoreapp2.0
 
