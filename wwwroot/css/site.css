@@ -1,7 +1,10 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -32,4 +35,26 @@
     .carousel-caption {
         display: none;
     }
+}
+
+.row.display-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.display-flex h2{
+    font-family: 'Abril Fatface', cursive;
+}
+.row.display-flex > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row.display-flex > [class*='col-'] > .well {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
+    width: 100%;
 }

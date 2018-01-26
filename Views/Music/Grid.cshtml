@@ -1,0 +1,22 @@
+@model PlaylistViewModel
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <div class="btn-group">
+        <a class="btn btn-default" role="button" asp-area="" asp-controller="Music" asp-action="Index">List view</a>
+        <button type="button" class="btn btn-default active">Grid view</button>
+    </div>
+    <p>My awesome music page</p>
+    <div class="row display-flex">
+        @foreach(var track in @Model.Tracks){
+            <div class="col-md-3">
+                <div class="well">
+                    <h2>@track.Title</h2>
+                    <small><h4>@track.Artist</h4></small>
+                    <p>Plays: @track.NumPlays</p>
+                </div>
+            </div>    
+        }
+    </div>
+</div>
+

@@ -18,5 +18,16 @@ namespace music.Controllers
             ViewData["Title"] = "My Music";
             return View(model);
         }
+        public IActionResult Grid()
+        {
+            var model = new PlaylistViewModel
+            {
+                Name = "Favorites",
+                Tracks = new SampleTracks().GetAllTracks()
+            };
+
+            ViewData["Title"] = "My Music";
+            return View(model);
+        }
     }
 }
