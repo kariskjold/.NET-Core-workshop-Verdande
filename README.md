@@ -117,13 +117,20 @@ I "Playlist" ønsker vi et view der vi viser fram en spilleliste med tilhørende
 
 3. Vis spillelistens navn i viewet
 
-## Oppsett av data (TODO)
+## Oppsett av playlist data
 
-1. Last ned Workshop.db fra github repoet, og legg det i ditt eget prosjekt under /bin/Debug/netcoreapp2.0
+1. Opprett en TrackController og en TrackViewModel på samme måte som du opprettet Playlist sin funksjonalitet. ViewModellen til Track skal inneholde følgende egenskaper:
 
-2. Koble opp mot databasen
+⋅⋅* int Id
+⋅⋅* string Title
+⋅⋅* string Artist
+⋅⋅* int NumPlays
 
-## Legg til data i viewet (TODO)
+2. Legg til en liste med tracks som egenskap i PlaylistViewModel.
+
+3. Legg til Mockfil og inkluder i PlaylistViewet (TODO Lana)
+
+4. Bytt mellom ListView og GridView - lenker mellom og CSS-forklaringer (TODO Lana)
 
 ## Authors
 
