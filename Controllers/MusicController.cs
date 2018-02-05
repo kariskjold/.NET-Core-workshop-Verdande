@@ -15,7 +15,7 @@ namespace music.Controllers
                 Tracks = new SampleTracks().GetAllTracks()
             };
 
-            ViewData["Title"] = "My Music";
+            ViewData["Title"] = "Playlist";
             return View(model);
         }
         public IActionResult Grid()
@@ -26,7 +26,7 @@ namespace music.Controllers
                 Tracks = new SampleTracks().GetAllTracks()
             };
 
-            ViewData["Title"] = "My Music";
+            ViewData["Title"] = "Playlist";
             return View(model);
         }
     }

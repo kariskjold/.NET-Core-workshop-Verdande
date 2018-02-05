@@ -54,12 +54,12 @@ File >> Open >> ... music
 
 Her ser du en MVC-struktur, med mappe for controllere, modeller og views. Naviger deg litt frem og tilbake mellom filene, for å bli kjent med strukturen.
 
-## Opprett en ny side som heter "My music"
+## Opprett en ny side som heter "Playlist"
 
-1. Naviger deg til mappen /Controllers, og opprett en ny fil som heter MusicController.cs
+1. Naviger deg til mappen /Controllers, og opprett en ny fil som heter PlaylistController.cs
 
 ```
-/Controllers/MusicController.cs
+/Controllers/PlaylistController.cs
 ```
 
 ```csharp
@@ -67,26 +67,26 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Music.Controllers
 {
-    public class MusicController : Controller
+    public class PlaylistController : Controller
     {
         public IActionResult Index()
         {
-            ViewData["Title"] = "My Music";
+            ViewData["Title"] = "Playlist";
             return View();
         }
     }
 }
 ```
 
-2. Naviger deg til mappen /Views, og opprett en undermappe "Music" og under der; en fil "Index.cshtml".
+2. Naviger deg til mappen /Views, og opprett en undermappe "Playlist" og under der; en fil "Index.cshtml".
 
 ```
-/Views/Music/Index.cshtml
+/Views/Playlist/Index.cshtml
 ```
 
 Dette blir viewet til den nye siden vi lager. Legg til en header med tittelen vi definerte i controlleren, og en paragraf med en valgfri tekst.
 
-3. Naviger deg til partial viewet /Shared/_Layout.cshtml og legg til et nytt menypunkt i headeren som du kaller f.eks "My music"
+3. Naviger deg til partial viewet /Shared/_Layout.cshtml og legg til et nytt menypunkt i headeren som du kaller "Playlist"
 
 <!--- asp-controller: music --->
 <!--- asp-action: Index --->
@@ -105,7 +105,7 @@ dotnet run
 
 ## Opprett en viewModel for Playlist
 
-Under "my music" ønsker vi å vise fram spillelister med tilhørende sanger. Hver spilleliste skal ha et navn. Vi begynner med å opprette en viewModel for Playlist. Under /Models ser dere et eksempel på en viewModel. 
+I "Playlist" ønsker vi et view der vi viser fram en spilleliste med tilhørende sanger. Spillelisten skal ha et navn. Vi begynner med å opprette en viewModel for Playlist. Under /Models ser dere et eksempel på en viewModel. 
 
 1. Opprett en ny fil med en playlist viewModel som har egenskapen "Name" med getter og setter.
 
@@ -113,7 +113,7 @@ Under "my music" ønsker vi å vise fram spillelister med tilhørende sanger. Hv
 /Models/PlaylistViewModel.cs
 ```
 
-2. Definer playlistViewModel som model i MusicController. Sett et navn til spillelisten, og send med modellen i det du returnerer viewet i Index-metoden.
+2. Definer playlistViewModel som model i PlaylistController. Sett et navn til spillelisten, og send med modellen i det du returnerer viewet i Index-metoden.
 
 3. Vis spillelistens navn i viewet
 
