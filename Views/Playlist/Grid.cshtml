@@ -1,12 +1,12 @@
 @model PlaylistViewModel
 
+<img src="~/images/playlistbanner.png" alt="ASP.NET" class="img-responsive" />
 <div class="container">
     <h2>@ViewData["Title"]</h2>
     <div class="btn-group">
-        <a class="btn btn-default" role="button" asp-area="" asp-controller="Music" asp-action="Index">List view</a>
+        <a class="btn btn-default" role="button" asp-area="" asp-controller="Playlist" asp-action="Index">List view</a>
         <button type="button" class="btn btn-default active">Grid view</button>
     </div>
-    <p>My awesome music page</p>
     <div class="row display-flex">
         @foreach(var track in @Model.Tracks){
             <div class="col-md-3">

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace music.Controllers
 {
-    public class MusicController : Controller
+    public class PlaylistController : Controller
     {
         public IActionResult Index()
         {
