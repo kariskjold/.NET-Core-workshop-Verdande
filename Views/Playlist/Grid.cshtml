@@ -6,6 +6,7 @@
     <div class="btn-group">
         <a class="btn btn-default" role="button" asp-area="" asp-controller="Playlist" asp-action="Index">List view</a>
         <button type="button" class="btn btn-default active">Grid view</button>
+        <a class="btn btn-default" role="button" asp-area="" asp-controller="Playlist" asp-action="TopTen">Top 10</a>
     </div>
     <div class="row display-flex">
         @foreach(var track in @Model.Tracks){

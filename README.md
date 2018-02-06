@@ -121,14 +121,31 @@ I "Playlist" ønsker vi et view der vi viser fram en spilleliste med tilhørende
 
 1. Opprett en TrackController og en TrackViewModel på samme måte som du opprettet Playlist sin funksjonalitet. ViewModellen til Track skal inneholde følgende egenskaper:
 
-⋅⋅* int Id
-⋅⋅* string Title
-⋅⋅* string Artist
-⋅⋅* int NumPlays
+|Type   | Name     |
+|-------|----------|
+|int    | Id       |
+|string | Title    |
+|string | Artist   |
+|int    | NumPlays |
+
+
 
 2. Legg til en liste med tracks som egenskap i PlaylistViewModel.
 
 3. Legg til Mockfil og inkluder i PlaylistViewet (TODO Lana)
+
+Last ned SampleTracks.cs og legg filen inn i rotmappen til prosjektet. Sjekk at filen inneholder riktig namespace. Det må være det samme som det du har kalt prosjektet ditt. 
+Du får en track ved å kalle:
+```csharp
+    new SampleTracks().GetTrackById(id);
+```
+Id er lagt inn som et løpenummer i listen av sanger. Den første sangen har Id=0.  
+
+Du får en liste av tracks ved å kalle:
+
+```csharp
+    new SampleTracks().GetAllTracks();
+```
 
 4. Bytt mellom ListView og GridView - lenker mellom og CSS-forklaringer (TODO Lana)
 
