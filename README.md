@@ -103,6 +103,7 @@ dotnet run
 
 5. Se oppdateringene på http://localhost:5000
 
+Vi har ikke data for playlist ennå, og kommer tilbake til dette etter at vi har satt opp data. 
 
 ## Oppsett av data
 
@@ -205,16 +206,13 @@ http://localhost:5000/Track/Index/1
 ```
  
 ## Model vs ViewModels
-
-
-
-
+Får å bruke reell data vil som regel en MVC-applikasjon være koblet mot en database. For å kunne bruke data fra databaser trenger vi å representere data i applikasjonen som modeller. Det er ikke alltid vi ønsker å vise data til brukeren på samme måte som modellene kan gjenspeile. F.eks synes vi kanskje ikke at det er relevant å vise én og én track om gangen. Selv om MVC står for Model View Controller, er det vanlig å introdusere noe som kalles en `ViewModel` som  skal gjenspeile hvordan vi skal vise data i et View. I vår applikasjon ønsker vi å vise alle tracks i en liste for å lage en spilleliste. Et view kan kun ta imot én modell om gangen, og vi har 30 Track-modeller vi ønsker å vise samtidig. Får å løse dette introduserer vi en `PlaylistViewModel` som skal være en `ViewModel` som inneholder en samling av alle Track-modellene. 
 
 ## Opprett en viewModel for Playlist
 
 I "Playlist" ønsker vi et view der vi viser fram en spilleliste med tilhørende sanger. Spillelisten skal ha et navn. Vi begynner med å opprette en viewModel for Playlist. Under /Models ser dere et eksempel på en viewModel. 
 
-1. Opprett en ny fil med en playlist viewModel som har egenskapen "Name" med getter og setter.
+1. Opprett en ny fil med en playlist viewModel som har egenskapen "Name" med `get` og `set`. 
 
 ```
 /Models/PlaylistViewModel.cs
@@ -222,11 +220,60 @@ I "Playlist" ønsker vi et view der vi viser fram en spilleliste med tilhørende
 
 2. Definer playlistViewModel som model i PlaylistController. Sett et navn til spillelisten, og send med modellen i det du returnerer viewet i Index-metoden.
 
-3. Vis spillelistens navn i viewet
+```csharp
+var model = new PlaylistViewModel();
+model.Name = "Favorites";
+ViewData["Title"] = "Playlist";
+return View(model);
+```
 
+Husk at Index.cshtml under /Views/Playlist/ må inneholde hvilken modell som sendes gjennon kontrolleren, som i dette tilfellet er en PlaylistViewModel.
 
+3. Vis spillelistens navn i viewet ved hjelp av:
+```
+@Model.Name
+```
+4. Legg til en ny egenskap i PlaylistViewModel:
 
-4. Bytt mellom ListView og GridView - lenker mellom og CSS-forklaringer (TODO Lana)
+```csharp
+    public List<Track> Tracks { get; set; }
+```
+
+Husk å importere `using System.Collections.Generic` for å kunne bruke `List<T>`. 
+
+5. Gå til PlaylistController, og sett model.Tracks til en liste av Tracks. 
+Bruk metoden fra SampleTracks til å gjøre dette:
+
+```csharp
+new SampleTracks().GetAllTracks();
+```
+
+6. I Index.cshtml kan vi bruke en foreach-løkke for å iterere gjennom Tracks. For å bruke c#-kode i et view setter vi `@` foran:
+
+```html
+<table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Plays</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach(var track in @Model.Tracks)
+            {
+                <tr>
+                    <td>@track.Title</td>
+                    <td>@track.Artist</td>
+                    <td>@track.NumPlays</td>
+                </tr>
+            }
+        </tbody>
+    </table> 
+```
+Vi bruker bootstrap sin table tag for å lage en tabell med track-data. 
+
+## Ekstra: Lag flere views for å vise spillelisten på ulike måter. 
 
 ## Authors
 
