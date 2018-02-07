@@ -150,9 +150,9 @@ MVC vil lete i Views etter en mappe basert på kontrollernavnet. Hvis kontroller
 
 ```csharp
 public IActionResult Index()
-        {
-            ...
-        }
+{
+    ...
+}
 ```
 
 I Index.cshtml ønsker vi å ta imot Track som modell. Et view tar imot en modell for å kunne vise data fra modellene. For å kunne vise Track-data i index.cshtml skriver vi følgende i Index.cshtml :
@@ -252,24 +252,24 @@ new SampleTracks().GetAllTracks();
 
 ```html
 <table class="table table-striped">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Plays</th>
-        </tr>
-        </thead>
-        <tbody>
-            @foreach(var track in @Model.Tracks)
-            {
-                <tr>
-                    <td>@track.Title</td>
-                    <td>@track.Artist</td>
-                    <td>@track.NumPlays</td>
-                </tr>
-            }
-        </tbody>
-    </table> 
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Plays</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var track in @Model.Tracks)
+        {
+            <tr>
+                <td>@track.Title</td>
+                <td>@track.Artist</td>
+                <td>@track.NumPlays</td>
+            </tr>
+        }
+    </tbody>
+</table> 
 ```
 Vi bruker bootstrap sin table tag for å lage en tabell med track-data. 
 
