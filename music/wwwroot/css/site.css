@@ -74,7 +74,5 @@ body {
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-    border-bottom: 1px solid currentColor;
-    display: inline-block;
-    line-height: 0.2;
+    text-decoration: underline;
 }
