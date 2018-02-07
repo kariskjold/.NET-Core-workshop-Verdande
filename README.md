@@ -205,8 +205,8 @@ new SampleTracks().GetTrackById(id);
 http://localhost:5000/Track/Index/1
 ```
  
-## Model vs ViewModels
-Får å bruke reell data vil som regel en MVC-applikasjon være koblet mot en database. For å kunne bruke data fra databaser trenger vi å representere data i applikasjonen som modeller. Det er ikke alltid vi ønsker å vise data til brukeren på samme måte som modellene kan gjenspeile. F.eks synes vi kanskje ikke at det er relevant å vise én og én track om gangen. Selv om MVC står for Model View Controller, er det vanlig å introdusere noe som kalles en `ViewModel` som  skal gjenspeile hvordan vi skal vise data i et View. I vår applikasjon ønsker vi å vise alle tracks i en liste for å lage en spilleliste. Et view kan kun ta imot én modell om gangen, og vi har 30 Track-modeller vi ønsker å vise samtidig. Får å løse dette introduserer vi en `PlaylistViewModel` som skal være en `ViewModel` som inneholder en samling av alle Track-modellene. 
+## Models vs ViewModels
+Får å bruke reell data vil som regel en MVC-applikasjon være koblet mot en database. For å kunne bruke data fra databaser trenger vi å representere data i applikasjonen som modeller. Det er ikke alltid vi ønsker å vise data til brukeren på samme måte som modellene kan gjenspeile. F.eks synes vi kanskje ikke at det er relevant å vise én og én track om gangen. Selv om MVC står for Model View Controller, er det vanlig å introdusere noe som kalles en `ViewModel` som  skal gjenspeile hvordan vi skal vise data i et View. I vår applikasjon ønsker vi å vise alle tracks i en liste for å lage en spilleliste. Et view kan kun ta imot én modell om gangen, og vi har 30 Track-modeller vi ønsker å vise samtidig. For å løse dette introduserer vi en `PlaylistViewModel` som skal være en `ViewModel` som inneholder en samling av alle Track-modellene. 
 
 ## Opprett en ViewModel for Playlist
 
