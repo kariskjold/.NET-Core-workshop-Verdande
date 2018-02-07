@@ -1,4 +1,10 @@
 @model Track
+<div class="container">
+    <h1>@Model.Title - @Model.Artist</h1>
 
-<h1>Track</h1>
-
+    <p>
+        <span>@Model.Title</span> -  
+        <span>@Model.Artist</span>
+        <span>@Model.NumPlays</span>
+    </p>
+</div>

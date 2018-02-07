@@ -6,15 +6,10 @@ namespace music.Controllers
 {
     public class TrackController : Controller
     {
-        public IActionResult Detail(int id)
+        public IActionResult Index(int id)
         {
             var track = new SampleTracks().GetTrackById(id);
-
             return View(track);
-        }
-        public IActionResult Index()
-        {
-            return View(new Track());
         }
     }
 }
