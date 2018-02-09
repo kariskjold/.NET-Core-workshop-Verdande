@@ -8,18 +8,18 @@ Velkommen til workshop med Verdande og Knowit Experience! Her finner du instruks
 
 2. Åpne terminal hvis du har mac / linux, eller command prompt dersom du har Windows
 
-3. Naviger deg til den mappen du ønsker å opprette prosjektet i, for eksempel til /Documents/git
+3. Naviger deg til den mappen du ønsker å opprette prosjektet i, for eksempel til /Documents/git og 
 
-4. Kjør følgende kommando for å opprette en web applikasjon som heter "music":
-
-```
-dotnet new mvc music
-```
-
-5. Naviger deg inn i prosjektet
+4. Opprett en tom mappe der prosjektet ditt skal ligge
 
 ```
-cd music
+mkdir music
+```
+
+5. Naviger deg inn i mappen og kjør følgende kommando for å opprette en ny dotnet web applikasjon:
+
+```
+dotnet new mvc
 ```
 
 6. Start web applikasjonen:
